@@ -1,0 +1,15 @@
+ButtonsTabBar(
+              duration: 200,
+              contentPadding: EdgeInsets.symmetric(
+                  horizontal: width * 0.05, vertical: heigth * 0.015),
+              // borderColor: appContainerColor,
+              backgroundColor: appContainerColor,
+              unselectedBackgroundColor: whiteColor,
+              labelStyle: const TextStyle(color: whiteColor),
+              unselectedLabelStyle: const TextStyle(color: Colors.grey),
+              tabs: List.generate(daysInMonth, (index) {
+                DateTime date =
+                    DateTime(selectedDate.year, selectedDate.month, index + 1);
+                return Tab(text: '${days[date.weekday - 1]} ' ' ${index + 1}');
+              }),
+            ),
